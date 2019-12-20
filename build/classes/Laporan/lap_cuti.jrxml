@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="db4b2e06-46d7-4f5a-9c50-23c0bae7b9d6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     *,
+     izin.`No` AS izin_No,
+     izin.`nip` AS izin_nip,
+     izin.`nama` AS izin_nama,
+     izin.`jenis` AS izin_jenis,
+     izin.`dari` AS izin_dari,
+     izin.`sampai` AS izin_sampai,
+     izin.`Ket` AS izin_Ket
+FROM
+     `izin` izin]]>
+	</queryString>
+	<field name="No" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nip" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jenis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dari" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sampai" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Ket" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="izin_No" class="java.lang.Integer"/>
+	<field name="izin_nip" class="java.lang.Integer"/>
+	<field name="izin_nama" class="java.lang.String"/>
+	<field name="izin_jenis" class="java.lang.String"/>
+	<field name="izin_dari" class="java.sql.Date"/>
+	<field name="izin_sampai" class="java.sql.Date"/>
+	<field name="izin_Ket" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="ac13fe80-e615-4146-977d-66aaa2b575ce"/>
+				<staticText>
+					<reportElement x="20" y="10" width="555" height="56" forecolor="#FFFFFF" uuid="0e796b81-d8b3-4d5b-80d4-2e9d8d390431"/>
+					<textElement>
+						<font size="27" isBold="true"/>
+					</textElement>
+					<text><![CDATA[MASTER DATA IZIN/CUTI]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="244" y="53" width="306" height="39" forecolor="#FFFFFF" uuid="6b306d2d-2325-4cdc-b29b-e12fa6d7aaf2"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[PT ALIHDAYA BPO INDONESIA]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="25"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<staticText>
+				<reportElement x="0" y="0" width="79" height="20" uuid="ce882655-2325-464a-8b1d-351a92983bbe"/>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="0" width="79" height="20" uuid="29dbd21b-58bd-4f4b-85ae-e7f479b8f781"/>
+				<text><![CDATA[NIP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="0" width="79" height="20" uuid="cf1a43a8-552c-4f8f-81d0-c529ff7170f8"/>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="0" width="79" height="20" uuid="93758272-751b-455d-84f1-6fa25c51112d"/>
+				<text><![CDATA[Jenis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="316" y="0" width="79" height="20" uuid="7f4addc5-9430-42df-a722-195dcb9fdd96"/>
+				<text><![CDATA[Dari Tanggal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="395" y="0" width="79" height="20" uuid="ccda21c8-c029-4659-8343-f867fdba621f"/>
+				<text><![CDATA[ampai Tanggal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="474" y="0" width="79" height="20" uuid="e7b92f2f-2518-42e1-a205-b2168f2f9404"/>
+				<text><![CDATA[Keteranagn]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="eb312463-4165-4e72-bb8a-3f2dfc7f9d5c"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="0" width="79" height="20" uuid="507d19b6-52fe-4299-822e-80e7c286819d"/>
+				<textFieldExpression><![CDATA[$F{No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="79" y="0" width="79" height="20" uuid="886aa50f-7b7c-4533-a8d7-fb38ed490780"/>
+				<textFieldExpression><![CDATA[$F{nip}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="0" width="79" height="20" uuid="7a12cbc4-e3ec-4b2b-a6f6-ef3e407eb3f0"/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="0" width="79" height="20" uuid="21a78f0e-9160-4936-86c4-553257170644"/>
+				<textFieldExpression><![CDATA[$F{jenis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="316" y="0" width="79" height="20" uuid="660f0fec-cfbe-47f4-a105-3f1aeb1cada6"/>
+				<textFieldExpression><![CDATA[$F{dari}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="0" width="79" height="20" uuid="fad8039f-d9c7-422c-a720-74188c720183"/>
+				<textFieldExpression><![CDATA[$F{sampai}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="0" width="79" height="20" uuid="71e130fb-cba4-4f8a-86bf-dff215b82d55"/>
+				<textFieldExpression><![CDATA[$F{Ket}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="18f44173-a267-4e3f-9602-124b0885fba3"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="ebc8f5b7-fa39-431c-b8a2-0dba74d1ebc8"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="07872039-8733-4914-99c8-98975ca28404"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="600" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="91e1c469-94d7-41e3-b2ad-6cfc2d74b7fa">
+	<property name="template.type" value="columnar"/>
+	<property name="ireport.zoom" value="1.0980750000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="90"/>
+	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="param_slip" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="pass" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT *, CAST(AES_DECRYPT(gapok, $P{pass}) AS CHAR(30)) gapok_decrypt , CAST(AES_DECRYPT(tunjab_fung, $P{pass}) AS CHAR(30)) tunjab_fung_decrypt , CAST(AES_DECRYPT(tunj_masuk, $P{pass}) AS CHAR(30)) tunj_masuk_decrypt , CAST(AES_DECRYPT(tunj_lembur, $P{pass}) AS CHAR(30)) tunj_lembur_decrypt , CAST(AES_DECRYPT(total_ab, $P{pass}) AS CHAR(30)) total_ab_decrypt ,CAST(AES_DECRYPT(pph,$P{pass}) AS CHAR(30)) pph_decrypt , CAST(AES_DECRYPT(iuran, $P{pass}) AS CHAR(30)) iuran_decrypt , CAST(AES_DECRYPT(pinjaman, $P{pass}) AS CHAR(30))pinjaman_decrypt , CAST(AES_DECRYPT(gaji_bersih,$P{pass}) AS CHAR(30)) gaji_bersih_decrypt FROM hitung_gaji
+where nomor_slip = $P{param_slip}]]>
+	</queryString>
+	<field name="tgl_bayar" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gaji_bln" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nomor_slip" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nip" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_peg" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jabatan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tot_masuk" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tot_lembur" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gol" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gapok" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tunjab_fung" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tunj_masuk" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tunj_lembur" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_ab" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pph" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="iuran" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pinjaman" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gaji_bersih" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gapok_decrypt" class="java.lang.String"/>
+	<field name="tunjab_fung_decrypt" class="java.lang.String"/>
+	<field name="tunj_masuk_decrypt" class="java.lang.String"/>
+	<field name="tunj_lembur_decrypt" class="java.lang.String"/>
+	<field name="total_ab_decrypt" class="java.lang.String"/>
+	<field name="pph_decrypt" class="java.lang.String"/>
+	<field name="iuran_decrypt" class="java.lang.String"/>
+	<field name="pinjaman_decrypt" class="java.lang.String"/>
+	<field name="gaji_bersih_decrypt" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="17" splitType="Stretch">
+			<staticText>
+				<reportElement style="SubTitle" x="6" y="0" width="551" height="12" uuid="3255ee81-5512-42f2-a0b7-de1a3f4ea0e6"/>
+				<textElement textAlignment="Center">
+					<font size="22" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Slip Gaji Bulanan Pegawai]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="491" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="4" y="152" width="132" height="20" forecolor="#000000" uuid="60b15a85-edd5-468e-b963-b159b5567b59"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tanggal Pembayaran]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="136" y="153" width="115" height="18" uuid="ffc2d5e5-112b-4b94-a38d-f90faaa97b81"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tgl_bayar}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="4" y="172" width="132" height="20" forecolor="#000000" uuid="344c13ac-fcb6-4327-8da5-281e4f23ed22"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Gaji untuk Bulan]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="136" y="171" width="115" height="18" uuid="b07cf463-c21a-4a8c-840e-42e996f6d029"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gaji_bln}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="254" y="151" width="107" height="20" forecolor="#000000" uuid="b9c60693-251a-45d4-9a37-fac9978e4124"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[NIP]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="361" y="152" width="190" height="18" uuid="b175f83b-1310-4696-899e-770a067d4c04"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nip}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="254" y="136" width="107" height="20" forecolor="#000000" uuid="74bddfa3-83aa-45e3-8e26-3d4b50b4c29f"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nama Pegawai]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="361" y="134" width="192" height="18" uuid="bcf3f914-2662-4b8f-844b-41e310a92268"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_peg}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="53" y="206" width="215" height="20" forecolor="#000000" uuid="66b67e89-361e-4fd6-b5af-3ebd2ac75146"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[A.  Gaji Pokok]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="78" y="267" width="190" height="20" forecolor="#000000" uuid="8beb118e-96db-4c40-8b07-3c360a386a05"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tunjangan Kehadiran]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="78" y="287" width="190" height="20" forecolor="#000000" uuid="9ef158df-dbc2-42be-a05a-39368eb518b0"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Total Lembur]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="76" y="416" width="190" height="20" forecolor="#000000" uuid="7921f4bf-ae59-432e-84b1-eff82bc24dd6"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Pinjaman]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="76" y="376" width="190" height="20" forecolor="#000000" uuid="92714aa1-021c-4177-bfb3-518ddbea4248"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Iuran Wajib Pegawai]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="76" y="396" width="190" height="20" forecolor="#000000" uuid="a86ce30a-5e2e-4380-ac2a-ce242ac2e2c1"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Pajak (PPh) 10%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="31" y="447" width="170" height="30" forecolor="#000000" uuid="c91f4da9-77e6-4603-9b77-daa8ce6dc60f"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Gaji yang diterima]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="6" y="133" width="128" height="20" forecolor="#000000" uuid="35804b13-78a8-4c64-8375-8584fada4c0c"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nomor Slip]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="136" y="135" width="115" height="18" uuid="e51f0b42-518e-4b9f-a55e-d139bd5d8963"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomor_slip}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="4" y="197" width="535" height="1" uuid="8bbec62c-e15d-4047-8775-da2beee4e3db"/>
+			</line>
+			<line>
+				<reportElement x="4" y="446" width="535" height="1" uuid="8bbec62c-e15d-4047-8775-da2beee4e3db"/>
+			</line>
+			<line>
+				<reportElement x="2" y="477" width="535" height="1" uuid="8bbec62c-e15d-4047-8775-da2beee4e3db"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="6" y="16" width="547" height="58" forecolor="#000000" uuid="35804b13-78a8-4c64-8375-8584fada4c0c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="10" y="74" width="547" height="32" forecolor="#666600" uuid="35804b13-78a8-4c64-8375-8584fada4c0c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Slip Gaji Karyawan]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="125" width="535" height="1" uuid="8bbec62c-e15d-4047-8775-da2beee4e3db"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="53" y="226" width="215" height="20" forecolor="#000000" uuid="66b67e89-361e-4fd6-b5af-3ebd2ac75146"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[B.  Tunjangan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="78" y="247" width="190" height="20" forecolor="#000000" uuid="38d07e83-3f8f-4925-8511-b29e3592ea7f"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Jabatan Fungsional]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="78" y="326" width="190" height="32" forecolor="#000000" uuid="66b67e89-361e-4fd6-b5af-3ebd2ac75146"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total A+B]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="53" y="356" width="215" height="20" forecolor="#000000" uuid="66b67e89-361e-4fd6-b5af-3ebd2ac75146"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[C.  Pinjaman]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="78" y="106" width="104" height="20" uuid="aca089ac-cdea-4573-bb21-4c98ca97f4de"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="6" y="106" width="94" height="20" uuid="997e2021-cbc8-44ba-839e-dafc64d01c30"/>
+				<text><![CDATA[Tanggal Cetak :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="10" y="16" width="541" height="58" forecolor="#000000" uuid="ff7947ab-8cc6-4440-af1d-61abbe22c82c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="24" isBold="true" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[PT ALIHDAYA BPO INDONESIA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="206" width="166" height="20" uuid="da37bb8b-f7ea-4f92-9db6-3d1a0f11f998"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gapok_decrypt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="246" width="166" height="20" uuid="2df6bbea-d68f-4faf-baf4-08530cd63288"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tunjab_fung_decrypt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="287" width="166" height="20" uuid="51f42cbd-2fe0-41f5-a6e8-d3aede1a9d9f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tunj_lembur_decrypt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="326" width="166" height="30" uuid="45eab850-f0c4-41ee-99ab-41c2792a7ae1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_ab_decrypt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="376" width="166" height="20" uuid="1921fa9b-cf75-4827-951f-34898260b1e0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{iuran_decrypt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="396" width="166" height="20" uuid="3eff5c0a-350b-4790-9cae-7f99b5051c59"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pph_decrypt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="416" width="166" height="20" uuid="746e2540-8025-4c36-b07e-06f541629fed"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pinjaman_decrypt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="447" width="166" height="30" uuid="617e327b-85c7-47ba-afec-e97157ff9242"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gaji_bersih_decrypt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="267" width="166" height="20" uuid="6f824fd2-23c1-47d1-81c4-dd37f30db082"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tunj_masuk_decrypt}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="035b2b12-d503-45ea-87b0-686333408ff7"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="13" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="2" y="0" width="555" height="13" forecolor="#D0B48E" backcolor="#9DB1B8" uuid="b03afc38-e375-4ad2-9bf0-1456feb5a191"/>
+				<textField>
+					<reportElement x="455" y="0" width="100" height="13" uuid="9662d61f-4138-4def-91e3-9506d8310c99"/>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

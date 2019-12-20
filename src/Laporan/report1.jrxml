@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b49ffffc-edeb-4b18-bc98-938104d3a97b">
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     hitung_gaji.`tgl_bayar` AS hitung_gaji_tgl_bayar,
+     hitung_gaji.`gaji_bln` AS hitung_gaji_gaji_bln,
+     hitung_gaji.`nomor_slip` AS hitung_gaji_nomor_slip,
+     hitung_gaji.`nip` AS hitung_gaji_nip,
+     hitung_gaji.`nama_peg` AS hitung_gaji_nama_peg,
+     hitung_gaji.`jabatan` AS hitung_gaji_jabatan,
+     hitung_gaji.`tot_masuk` AS hitung_gaji_tot_masuk,
+     hitung_gaji.`tot_lembur` AS hitung_gaji_tot_lembur,
+     hitung_gaji.`gol` AS hitung_gaji_gol,
+     hitung_gaji.`gapok` AS hitung_gaji_gapok,
+     hitung_gaji.`tunjab_fung` AS hitung_gaji_tunjab_fung,
+     hitung_gaji.`tunj_masuk` AS hitung_gaji_tunj_masuk,
+     hitung_gaji.`tunj_lembur` AS hitung_gaji_tunj_lembur,
+     hitung_gaji.`total_ab` AS hitung_gaji_total_ab,
+     hitung_gaji.`pph` AS hitung_gaji_pph,
+     hitung_gaji.`iuran` AS hitung_gaji_iuran,
+     hitung_gaji.`pinjaman` AS hitung_gaji_pinjaman,
+     hitung_gaji.`gaji_bersih` AS hitung_gaji_gaji_bersih
+FROM
+     `hitung_gaji` hitung_gaji]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
